@@ -5,49 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="images/logo.png" alt="Logo" />
+                <img src="logo.png" alt="Student Hub Logo" class="logo-image">
             </div>
-            <ul class="nav-list">
+            <ul class="nav-list" id="nav-list">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
     </header>
 
-    <section id="home" class="hero-section">
-        <h1>Welcome to Student Hub</h1>
-        <p>Your one-stop solution for all student needs.</p>
-    </section>
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Welcome to Student Hub</h1>
+            <p>Your one-stop solution for all student needs.</p>
+        </section>
 
-    <section id="about" class="about-section">
-        <h2>About Us</h2>
-        <p>We provide resources and support for students to excel in their academic journey.</p>
-    </section>
+        <section id="about" class="about-section">
+            <h2>About Us</h2>
+            <p>We provide resources and support for students to excel in their academic journey.</p>
+        </section>
 
-    <section id="search" class="search-section">
-      <h1>Property Listings</h1>
-      <input type="text" id="search" placeholder="Search for properties...">
-  </section>
+        <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-bar" />
+            <span class="search-icon">
+                <i class="fas fa-search"></i>
+            </span>
+        </div>
 
-    <section id="services" class="services-section">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Study Materials</li>
-            <li>Online Tutoring</li>
-            <li>Career Counseling</li>
-        </ul>
-    </section>
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Study Materials</li>
+                <li>Online Tutoring</li>
+                <li>Career Counseling</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Student Hub. All rights reserved.</p>
+        <div class="footer-content">
+            <ul class="footer-list">
+                <li><a href="Terms_of_Use.html">Terms of Use</a></li>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-text">
+            <p>&copy; 2024 Student Hub. All rights reserved.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

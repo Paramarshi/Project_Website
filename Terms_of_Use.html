@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="logo.png" alt="Student Hub Logo" class="logo">
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="nav-list" id="nav-list">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Terms of Use</h1>
+        <section id="terms" class="terms-section">
+            <h1>Terms of Use</h1>
+            <p>Welcome to Student Hub! These terms and conditions outline the rules and regulations for the use of Student Hub's website.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing this website, you accept these terms and conditions in full. Do not continue to use Student Hub's website if you do not accept all of the terms and conditions stated on this page.</p>
+
+            <h2>2. Intellectual Property Rights</h2>
+            <p>Unless otherwise stated, Student Hub and/or its licensors own the intellectual property rights for all material on Student Hub. All intellectual property rights are reserved.</p>
+
+            <h2>3. User Responsibilities</h2>
+            <p>Users are responsible for their own actions while using the website. Any misuse or abuse of the services may result in termination of access.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>In no event shall Student Hub be liable for any indirect, consequential, or incidental damages arising from the use of the website.</p>
+
+            <h2>5. Changes to Terms</h2>
+            <p>We reserve the right to amend these terms at any time. Users are encouraged to review these terms periodically for any changes.</p>
+
+            <h2>6. Contact Information</h2>
+            <p>If you have any questions about these Terms, please contact us at support@studenthub.com.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Hub. All rights reserved.</p>
+        <!-- Additional footer content can go here -->
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

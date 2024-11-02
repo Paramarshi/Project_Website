@@ -15,7 +15,7 @@ document.querySelectorAll('.nav-list a').forEach(anchor => {
 });
 
 // Toggle mobile menu
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const mobileMenuBtn = document.querySelector('.hamburger');
 const navList = document.querySelector('.nav-list');
 
 if (mobileMenuBtn) {
@@ -32,13 +32,17 @@ const contactLink = document.querySelector('.nav-list a[href="#contact"]');
 if (contactLink) {
     contactLink.addEventListener('click', (e) => {
         e.preventDefault();
-        modal.style.display = 'block';
+        if (modal) {
+            modal.style.display = 'block';
+        }
     });
 }
 
 if (modalClose) {
     modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
+        if (modal) {
+            modal.style.display = 'none';
+        }
     });
 }
 
@@ -60,6 +64,8 @@ if (contactForm) {
         // Simulate form submission
         alert('Form submitted successfully!');
         this.reset();
-        modal.style.display = 'none'; // Close modal after submission
+        if (modal) {
+            modal.style.display = 'none'; // Close modal after submission
+        }
     });
 }

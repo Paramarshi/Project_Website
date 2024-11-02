@@ -1,0 +1,145 @@
+/* Variables */
+:root {
+    --primary-color: #9FE2BF;
+    --font-color: #333; /* New font color variable */
+    --heading-color: #2C3E50; /* New heading color variable */
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 16px;
+    --border-radius: 5px;
+    --logo-width: 150px; /* New variable for logo width */
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: var(--font-color); /* Apply font color */
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center items vertically */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+/* Logo Styles */
+.logo {
+    width: 50px; /* Set logo width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit the height */
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-right: 20px;
+}
+
+/* Basic styles for the navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 4px 0; /* Space between lines */
+}
+
+/* Navigation List Styles */
+.nav-list {
+    list-style: none;
+    display: flex; /* Horizontal layout */
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide navigation links by default */
+        flex-direction: column; /* Stack vertically */
+        position: absolute; /* Position absolute for dropdown */
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        background-color: var(--primary-color);
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it appears above other content */
+    }
+
+    .nav-list.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu on small screens */
+    }
+}
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: var(--heading-color); /* Apply heading color */
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #151c22; /* Keep footer color as it is */
+    color: white; /* Keep footer font color as it is */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
