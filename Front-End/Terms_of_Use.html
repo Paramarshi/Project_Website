@@ -11,17 +11,17 @@
     <header>
         <nav class="navbar">
             <img src="logo.png" alt="Student Hub Logo" class="logo">
-            <div class="hamburger" id="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
             <ul class="nav-list" id="nav-list">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
     </header>
 
@@ -56,13 +56,5 @@
         <!-- Additional footer content can go here -->
     </footer>
     <script src="script.js"></script>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.getElementById('nav-list');
-
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>

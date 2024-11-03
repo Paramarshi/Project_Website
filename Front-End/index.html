@@ -19,7 +19,10 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
+            <div class="signup-container">
+                <a href="#signup" class="signup-button">Sign Up</a>
+            </div>
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -39,7 +42,7 @@
         </section>
 
         <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-bar" />
+            <input type="text" placeholder="Search..." class="search-bar" aria-label="Search" />
             <span class="search-icon">
                 <i class="fas fa-search"></i>
             </span>
@@ -56,26 +59,20 @@
     </main>
 
     <footer>
+        <div class="footer-line"></div> <!-- Horizontal line -->
         <div class="footer-content">
-            <ul class="footer-list">
-                <li><a href="Terms_of_Use.html">Terms of Use</a></li>
-                <li><a href="privacy_policy.html">Privacy Policy</a></li>
-
-            </ul>
-        </div>
-        <div class="footer-text">
-            <p>&copy; 2024 Student Hub. All rights reserved.</p>
+            <div class="footer-links">
+                <ul class="footer-list">
+                    <li><a href="Terms_of_Use.html">Terms of Use</a></li>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                </ul>
+                <div class="footer-text">
+                    <p>&copy; 2024 Student Hub. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navList = document.getElementById('nav-list');
-
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
