@@ -42,10 +42,12 @@
         </section>
 
         <div class="search-container">
-            <input type="text" placeholder="Search..." class="search-bar" aria-label="Search" />
-            <span class="search-icon">
-                <i class="fas fa-search"></i>
-            </span>
+            <form action="Property_Listing.html" method="GET">
+                <input type="text" class="search-bar" name="query" placeholder="Search...">
+                <button type="submit" class="search-icon">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
         </div>
 
         <section id="services" class="services-section">
@@ -72,7 +74,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="script.js"></script>
 </body>
 </html>

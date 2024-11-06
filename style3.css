@@ -1,0 +1,257 @@
+/* CSS Variables */
+:root {
+    --primary-color: #9FE2BF;
+    --secondary-color: #4CAF50;
+    --hover-color: #45a049;
+    --accent-color: #ffcc00;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --footer-bg-color: #151c22;
+    --font-family: Arial, sans-serif;
+    --spacing: 10px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: var(--spacing) 20px;
+}
+
+.logo-image {
+    width: 300px; /* Adjusted width for better responsiveness */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-image:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.line {
+    height: 3px;
+    width: 30px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* Navigation List Styles */
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-list a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: var(--primary-color);
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
+
+/* Sign-up Button */
+.signup-container {
+    margin-left: auto;
+}
+
+.signup-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.signup-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Property Listings Styles */
+.property-listings {
+    display: flex;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the cards */
+    gap: 20px; /* Space between cards */
+    margin: 0 auto; /* Center the container */
+    max-width: 800px; /* Optional: Set a max width for the listings */
+}
+
+.property-card {
+    display: flex; /* Use flexbox for the card */
+    flex-direction: row; /* Keep image and details in a row */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Background color */
+}
+
+.property-image {
+    width: 150px; /* Set a fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between image and details */
+}
+
+.property-details {
+    margin-top: 15px;
+}
+
+.view-details {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view-details:hover {
+    background-color: var(--hover-color);
+}
+
+/* Search and Filter Styles */
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-bar {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.filter-container {
+    display: flex;
+    gap: var(--spacing);
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.filter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #151c22;
+    color: white;
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.footer-line {
+    width: 90%; /* Adjust width to not touch the edges */
+    border-top: 2px solid white; /* White horizontal line */
+    margin: 40px auto 20px; /* Center line and add space above and below */
+}
+
+.footer-content {
+    display: flex; 
+    justify-content: center; /* Center footer content */
+    align-items: center; /* Align items vertically center */
+    width: 90%; /* Control width of footer content */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer-links {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Keep list and paragraph in same vertical level */
+    gap: 30px; /* Add space between the list and the paragraph */
+}
+
+.footer-list {
+    list-style: none; 
+    display: flex; 
+    padding: 0; 
+    margin: 0; /* Remove margin to keep them aligned */
+}
+
+.footer-list li {
+    margin: 0 15px; 
+}
+
+.footer-list a {
+    color: white; 
+    text-decoration: none; 
+}
+
+.footer-list a:hover {
+    text-decoration: underline; 
+}
+
+.footer-text {
+    text-align: right; /* Align text to the right */
+    margin: 0; /* No extra margin to keep them aligned */
+}

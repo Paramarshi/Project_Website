@@ -12,7 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+// property-listing.html
 
+// Function to get query parameters from the URL
+function getQueryParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// On page load, get the search query
+window.onload = function() {
+    const searchQuery = getQueryParameter('query');
+    if (searchQuery) {
+        // Implement your search functionality here
+        console.log('Searching for:', searchQuery);
+        // You can filter the property listings based on the searchQuery
+    }
+};
     // Toggle mobile menu
     const hamburger = document.getElementById('hamburger');
     const navList = document.getElementById('nav-list');
