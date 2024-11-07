@@ -1,80 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Hub</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <!-- Single Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Platform (Remove if not using Google Sign-In) -->
+    <!-- <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com"> -->
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+  </head>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="Student Hub Logo" class="logo-image">
-            </div>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="signup-container">
-                <a href="#signup" class="signup-button">Sign Up</a>
-            </div>
-            <div class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
+      <nav class="navbar" aria-label="Main navigation">
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" aria-label="Toggle dark mode">⚪</button>
+        <div class="logo">
+          <img src="logo.png" alt="Student Hub Logo" class="logo-image" />
+        </div>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="signup-container">
+          <a href="#signup" class="signup-button">Sign Up</a>
+        </div>
+        <div
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <h1>Welcome to Student Hub</h1>
-            <p>Your one-stop solution for all student needs.</p>
-        </section>
+      <section id="home" class="hero-section" aria-labelledby="home-heading">
+        <h1 id="home-heading">Welcome to Student Hub</h1>
+        <p>
+          Your one-stop solution for all student needs. Finding the right place
+          to live during your college life is crucial. At Student Hub, we offer
+          student-friendly rental options designed to make your life easy,
+          comfortable, and affordable. Whether you're looking for a cozy private
+          room, a shared apartment, or a convenient mess facility, we have
+          everything you need to focus on your studies, while we take care of
+          the essentials.
+        </p>
+      </section>
+      <section class="search-container">
+        <form action="Property_Listing.html" method="GET" role="search">
+          <input
+            type="text"
+            class="search-bar"
+            name="query"
+            placeholder="Search for Student Mess..."
+            aria-label="Search"
+          />
+          <button type="submit" class="search-icon" aria-label="Search Button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </section>
 
-        <section id="about" class="about-section">
-            <h2>About Us</h2>
-            <p>We provide resources and support for students to excel in their academic journey.</p>
-        </section>
+      <section id="about" class="about-section" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Us</h2>
+        <p>
+          At Student Hub, we understand that college life is all about balancing
+          academics, social life, and personal comfort. That’s why we are
+          dedicated to providing exceptional student accommodations that offer
+          much more than just a roof over your head. Whether you’re new to the
+          city or looking for a more comfortable place to stay, we ensure that
+          your living experience is as convenient, affordable, and enjoyable as
+          possible.
+        </p>
+        <h4>Our Mission</h4>
+        <p>
+          Our mission is simple: to provide safe, reliable, and affordable
+          student accommodations that cater to your daily needs, from quality
+          living spaces to convenient mess food services and high-speed
+          internet. We believe that students deserve to have a comfortable and
+          supportive environment to thrive academically and personally. We know
+          that university life can be hectic, and finding a place to stay should
+          not be another stress factor. That’s why we’ve designed our services
+          to take the hassle out of student living. With our mess facilities,
+          nutritious meal plans, and Wi-Fi services, we make sure that students
+          can focus on what really matters – their studies and their future.
+        </p>
+        <h4>Why Choose Us?</h4>
+        <ol>
+          <li>
+            <strong>Student-Centered Approach:</strong>
+            <p>
+              Every aspect of our accommodation options is designed with
+              students in mind. From affordable rental rates to flexible mess
+              services, we cater to your unique lifestyle and needs.
+            </p>
+          </li>
+          <li>
+            <strong>Convenient Living Spaces:</strong>
+            <p>
+              We offer a variety of student housing options, from private rooms
+              to shared apartments, each fully equipped to make your stay
+              comfortable and productive.
+            </p>
+          </li>
+          <li>
+            <strong>Affordable and Nutritious Mess Food:</strong>
+            <p>
+              Tasty, healthy, and affordable meals are prepared by our
+              experienced chefs, giving you the convenience of home-cooked food
+              at a fraction of the cost.
+            </p>
+          </li>
+          <li>
+            <strong>Reliable High-Speed Wi-Fi:</strong>
+            <p>
+              Stay connected to your studies, friends, and family with our fast
+              and uninterrupted Wi-Fi services. Whether you need it for online
+              classes, research, or leisure, our network is designed to meet all
+              your needs.
+            </p>
+          </li>
+          <li>
+            <strong>Seamless Experience:</strong>
+            <p>
+              We aim to simplify your living experience, from the moment you
+              book a room to the day you check out. Our customer support team is
+              always here to assist you, ensuring that your stay is smooth and
+              hassle-free.
+            </p>
+          </li>
+        </ol>
+        <h4>Our Vision</h4>
+        <p>
+          Our vision is to be the leading provider of student accommodations,
+          offering services that enhance the overall student experience. We are
+          committed to creating communities where students not only find a place
+          to live but also a place to grow, succeed, and make lasting memories.
+          At Student Hub, we strive to make student life as comfortable and
+          fulfilling as possible. We take pride in the fact that our
+          customers—your fellow students—trust us to provide a reliable,
+          stress-free, and supportive environment. Join us today and experience
+          student living in a whole new way!
+        </p>
+      </section>
 
-        <div class="search-container">
-            <form action="Property_Listing.html" method="GET">
-                <input type="text" class="search-bar" name="query" placeholder="Search...">
-                <button type="submit" class="search-icon">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-        </div>
+      <section
+        id="services"
+        class="services-section"
+        aria-labelledby="services-heading"
+      >
+        <h2 id="services-heading">Our Services</h2>
+        <ul>
+          <li>
+            <h3>Student Mess Rentals: A Home Away From Home</h3>
+            <p>
+              Say goodbye to the hassle of finding the right food every day. Our
+              mess facilities are designed for students who need a reliable,
+              safe, and tasty food option without the stress of cooking. With
+              flexible meal plans and options for different tastes and dietary
+              preferences, you can enjoy hearty meals prepared by our
+              experienced chefs. Whether you're craving home-style comfort food
+              or a quick snack, we've got you covered.
+            </p>
+          </li>
+          <li>
+            <h3>Tasty and Affordable Mess Food Services</h3>
+            <p>
+              We understand that good food is key to a productive student life.
+              That’s why we offer nutritious, well-balanced meals in our student
+              mess. The menu is carefully crafted to meet the nutritional needs
+              of students, offering a variety of options for breakfast, lunch,
+              and dinner. Our mess food service is designed to be both
+              affordable and delicious, ensuring that you never have to
+              compromise on taste or quality. From vegetarian dishes to
+              non-vegetarian meals, we cater to all preferences, so you can
+              focus on your studies instead of worrying about where your next
+              meal will come from.
+            </p>
+          </li>
+          <li>
+            <h3>High-Speed Wi-Fi for Uninterrupted Learning</h3>
+            <p>
+              In today’s digital world, a strong and reliable internet
+              connection is essential. That's why we provide high-speed Wi-Fi
+              services across all our student accommodations. Whether you're
+              attending online classes, researching for assignments, or simply
+              relaxing with a movie, you can count on a seamless connection.
+              Stay connected with your friends and family back home, or dive
+              into your academic work with uninterrupted access to the
+              internet—right in the comfort of your accommodation.
+            </p>
+          </li>
+          <li>
+            <h3>Everything You Need in One Place</h3>
+            <p>
+              At Student Hub, we are dedicated to providing you with more than
+              just a place to live. We aim to create a supportive environment
+              where you can thrive academically and socially. Our mess food
+              services, along with fast Wi-Fi, are just some of the ways we make
+              your student life easier. Combine that with convenient rental
+              options, and you'll have everything you need for a smooth and
+              enjoyable university experience.
+            </p>
+          </li>
+        </ul>
+      </section>
 
-        <section id="services" class="services-section">
-            <h2>Our Services</h2>
-            <ul>
-                <li>Study Materials</li>
-                <li>Online Tutoring</li>
-                <li>Career Counseling</li>
-            </ul>
-        </section>
+      <section id="blog" class="blog-section" aria-labelledby="blog-heading">
+        <h2 id="blog-heading">Real Estate Insights</h2>
+        <p>
+          Welcome to our blog! Here, we share valuable tips, market rates, and
+          neighborhood guides to help you navigate the real estate landscape.
+        </p>
+
+        <article class="blog-post" aria-labelledby="post1-heading">
+          <h3 id="post1-heading">Top 5 Tips for First-Time Renters</h3>
+          <p>
+            Renting for the first time can be overwhelming. Here are five
+            essential tips to guide you through the process...
+          </p>
+          <a href="blog/top-5-tips-for-first-time-renters.html">Read More</a>
+        </article>
+
+        <article class="blog-post" aria-labelledby="post2-heading">
+          <h3 id="post2-heading">Understanding Current Market Rates</h3>
+          <p>
+            Stay informed about the latest updates in the real estate market.
+            Learn how they can affect your renting decisions...
+          </p>
+          <a href="blog/understanding-current-market-rates.html">Read More</a>
+        </article>
+
+        <article class="blog-post" aria-labelledby="post3-heading">
+          <h3 id="post3-heading">Exploring Environment: What to Look For</h3>
+          <p>
+            Choosing the right environment is just as important as finding the
+            right apartment. Here are key factors to consider...
+          </p>
+          <a href="blog/exploring-environment.html">Read More</a>
+        </article>
+
+        <a href="blog/all-posts.html" class="view-all">View All Blog Posts</a>
+      </section>
+
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-heading"
+      >
+        <h2 id="contact-heading">Contact Real Estate Agent</h2>
+        <form action="send_inquiry.php" method="POST">
+          <input type="hidden" name="property_id" value="PROPERTY_ID_HERE" />
+          <!-- Replace with actual property ID -->
+
+          <label for="agent-id">Agent ID</label>
+          <input
+            type="text"
+            id="agent-id"
+            name="agent_id"
+            placeholder="Agent ID"
+            required
+            aria-required="true"
+          />
+
+          <label for="user-name">Your Name</label>
+          <input
+            type="text"
+            id="user-name"
+            name="name"
+            placeholder="Your Name"
+            required
+            aria-required="true"
+          />
+
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            aria-required="true"
+          />
+
+          <label for="message">Your Inquiry</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your Inquiry"
+            required
+            aria-required="true"
+          ></textarea>
+
+          <button type="submit">Send Inquiry</button>
+        </form>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-line"></div> <!-- Horizontal line -->
-        <div class="footer-content">
-            <div class="footer-links">
-                <ul class="footer-list">
-                    <li><a href="Terms_of_Use.html">Terms of Use</a></li>
-                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                </ul>
-                <div class="footer-text">
-                    <p>&copy; 2024 Student Hub. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
+      <div class="social-media">
+        <a
+          href="https://www.facebook.com"
+          target="_blank"
+          class="social-icon"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.twitter.com"
+          target="_blank"
+          class="social-icon"
+          aria-label="Twitter"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          class="social-icon"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a
+          href="https://www.instagram.com"
+          target="_blank"
+          class="social-icon"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <ul class="footer-list">
+          <li><a href="Terms_of_Use.html">Terms of Use</a></li>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+        </ul>
+        <p>&copy; 2024 Student Hub. All rights reserved.</p>
+      </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script src="script.js" defer></script>
+  </body>
 </html>

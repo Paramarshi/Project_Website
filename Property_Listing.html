@@ -1,84 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style3.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse a variety of student-friendly PGs, apartments, and commercial properties available for rent."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style3.css" />
     <title>Property Listings</title>
-</head>
-<body>
+  </head>
 
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <img src="logo.png" alt="Company logo" class="logo-image">
-        <div class="signup-container">
-            <a href="#" class="signup-button" aria-label="Sign up for an account">Sign Up</a>
-        </div>
+      <a href="/" aria-label="Go to homepage">
+        <img src="logo.png" alt="Company Logo" class="logo-image" />
+      </a>
+      <div class="signup-container">
+        <a href="#" class="signup-button" aria-label="Sign up for an account"
+          >Sign Up</a
+        >
+      </div>
     </nav>
 
     <main>
+      <!-- Search and Filter Section -->
+      <section class="search-container" aria-labelledby="search-section">
+        <h2 id="search-section" class="sr-only">
+          Search and Filter Properties
+        </h2>
 
-        <!-- Search and Filter Section -->
-        <section class="search-container">
-            <input type="text" class="search-bar" placeholder="Search properties..." aria-label="Search properties">
-            <div class="filter-container">
-                <label for="property-type">Property Type:</label>
-                <select class="filter" id="property-type">
-                    <option value="">All Types</option>
-                    <option value="house">House</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="commercial">Commercial</option>
-                </select>
-                <label for="min-price">Min Price:</label>
-                <input type="number" class="filter" placeholder="Min Price" id="min-price">
-                <label for="max-price">Max Price:</label>
-                <input type="number" class="filter" placeholder="Max Price" id="max-price">
-                <button class="filter-button" type="button">Apply Filters</button>
-            </div>
-        </section>
+        <!-- Search Bar Section -->
+        <form
+          action="#"
+          method="GET"
+          role="search"
+          aria-label="Property Search Form"
+        >
+          <div class="search-bar-container">
+            <input
+              type="text"
+              class="search-bar"
+              placeholder="Search properties..."
+              aria-label="Search for properties"
+              name="query"
+            />
+            <button
+              type="submit"
+              class="search-icon"
+              aria-label="Search Button"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
 
-        <!-- Property Listings Section -->
-        <section class="property-listings">
-            <h2>Available Properties</h2>
-            <div class="property-card">
-                <img src="property1.jpg" alt="Beautiful family house in New York" class="property-image" loading="lazy">
-                <div class="property-details">
-                    <h3>Beautiful Family House</h3>
-                    <p>Location: New York, NY</p>
-                    <p>Price: $500,000</p>
-                    <p>Bedrooms: 4 | Bathrooms: 3</p>
-                    <a href="#" class="view-details">View Details</a>
-                </div>
-            </div>
-            <div class="property-card">
-                <img src="property2.jpg" alt="Modern apartment in Los Angeles" class="property-image" loading="lazy">
-                <div class="property-details">
-                    <h3>Modern Apartment</h3>
-                    <p>Location: Los Angeles, CA</p>
-                    <p>Price: $350,000</p>
-                    <p>Bedrooms: 2 | Bathrooms: 2</p>
-                    <a href="#" class="view-details">View Details</a>
-                </div>
-            </div>
-        </section>
+        <!-- Filters Section -->
+        <div class="filter-container">
+          <form action="#" method="GET" aria-label="Property Filters Form">
+            <label for="property-type">Property Type:</label>
+            <select
+              class="filter"
+              id="property-type"
+              name="property-type"
+              aria-label="Filter by Property Type"
+            >
+              <option value="">All Types</option>
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="commercial">Commercial</option>
+            </select>
+
+            <label for="min-price">Min Price:</label>
+            <input
+              type="number"
+              class="filter"
+              placeholder="Min Price"
+              id="min-price"
+              name="min-price"
+              aria-label="Minimum Price"
+            />
+
+            <label for="max-price">Max Price:</label>
+            <input
+              type="number"
+              class="filter"
+              placeholder="Max Price"
+              id="max-price"
+              name="max-price"
+              aria-label="Maximum Price"
+            />
+
+            <button
+              class="filter-button"
+              type="submit"
+              aria-label="Apply Filters"
+            >
+              Apply Filters
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Property Listings Section -->
+      <section
+        class="property-listings"
+        aria-labelledby="property-listings-heading"
+      >
+        <h2 id="property-listings-heading">Available Properties</h2>
+
+        <!-- Property Card 1 -->
+        <article class="property-card">
+          <img
+            src="property1.jpg"
+            alt="Student Friendly PG in New Town"
+            class="property-image"
+            loading="lazy"
+          />
+          <div class="property-details">
+            <h3>Student Friendly PG</h3>
+            <p>Location: New Town, Kolkata</p>
+            <p>Price: Rs 14000/-</p>
+            <p>Bedrooms: 2 | Kitchen: 1 | Bathrooms: 1</p>
+            <a
+              href="#"
+              class="view-details"
+              aria-label="View details of Student Friendly PG in New Town"
+              >View Details</a
+            >
+          </div>
+        </article>
+
+        <!-- Property Card 2 -->
+        <article class="property-card">
+          <img
+            src="property2.jpg"
+            alt="Modern Student Apartment in Sector V"
+            class="property-image"
+            loading="lazy"
+          />
+          <div class="property-details">
+            <h3>Modern Student Apartment</h3>
+            <p>Location: Sector V, Kolkata</p>
+            <p>Price: Rs 12000/-</p>
+            <p>Bedrooms: 2 | Kitchen: 1 | Bathrooms: 2</p>
+            <a
+              href="#"
+              class="view-details"
+              aria-label="View details of Modern Student Apartment in Sector V"
+              >View Details</a
+            >
+          </div>
+        </article>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-line"></div>
-        <div class="footer-content">
-            <div class="footer-links">
-                <ul class="footer-list">
-                    <li><a href="Terms_of_Use.html">Terms of Use</a></li>
-                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                </ul>
-                <div class="footer-text">
-                    <p>&copy; 2024 Student Hub. All rights reserved.</p>
-                </div>
-            </div>
+      <div class="footer-line"></div>
+      <div class="footer-content">
+        <div class="footer-links">
+          <ul class="footer-list">
+            <li>
+              <a href="Terms_of_Use.html" aria-label="Go to Terms of Use"
+                >Terms of Use</a
+              >
+            </li>
+            <li>
+              <a href="privacy_policy.html" aria-label="Go to Privacy Policy"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+          <div class="footer-text">
+            <p>&copy; 2024 Student Hub. All rights reserved.</p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

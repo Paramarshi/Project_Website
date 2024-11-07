@@ -1,87 +1,114 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('.nav-list a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+document.addEventListener("DOMContentLoaded", () => {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll(".nav-list a").forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      event.preventDefault();
+      const targetId = anchor.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
     });
-// property-listing.html
+  });
 
-// Function to get query parameters from the URL
-function getQueryParameter(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
+  // Initialize Google Map
+  function initMap() {
+    const propertyLocation = { lat: -34.397, lng: 150.644 }; // Replace with actual coordinates
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: propertyLocation,
+    });
+    new google.maps.Marker({
+      position: propertyLocation,
+      map: map,
+    });
+  }
+  window.addEventListener("load", initMap);
 
-// On page load, get the search query
-window.onload = function() {
-    const searchQuery = getQueryParameter('query');
-    if (searchQuery) {
-        // Implement your search functionality here
-        console.log('Searching for:', searchQuery);
-        // You can filter the property listings based on the searchQuery
+  // Mobile menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const navList = document.getElementById("nav-list");
+  hamburger?.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    document.body.classList.toggle("no-scroll");
+  });
+  document.addEventListener("click", (event) => {
+    if (!navList.contains(event.target) && !hamburger.contains(event.target)) {
+      navList.classList.remove("active");
+      document.body.classList.remove("no-scroll");
     }
-};
-    // Toggle mobile menu
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
+  });
 
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+  // Modal functionality
+  const modal = document.getElementById("contactModal");
+  const modalClose = document.querySelector(".modal-close");
+  const contactLink = document.querySelector('.nav-list a[href="#contact"]');
+  contactLink?.addEventListener("click", (event) => {
+    event.preventDefault();
+    if (modal) modal.style.display = "block";
+  });
+  modalClose?.addEventListener("click", () => (modal.style.display = "none"));
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) modal.style.display = "none";
+  });
+
+  // Form validation
+  const contactForm = document.getElementById("contactForm");
+  contactForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const { name, email, message } = contactForm.elements;
+    if (![name, email, message].every((input) => input.value.trim())) {
+      alert("Please fill in all fields.");
+      return;
     }
+    alert("Form submitted successfully!");
+    contactForm.reset();
+    modal.style.display = "none";
+  });
 
-    // Modal functionality
-    const modal = document.getElementById('contactModal');
-    const modalClose = document.querySelector('.modal-close');
-    const contactLink = document.querySelector('.nav-list a[href="#contact"]');
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  function applyDarkMode(isDark) {
+    document.body.classList.toggle("dark-mode", isDark);
+    localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+  }
+  darkModeToggle?.addEventListener("click", () => {
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+  });
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
 
-    if (contactLink) {
-        contactLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (modal) {
-                modal.style.display = 'block';
-            }
-        });
+  // Scroll-to-Top Button
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  window.addEventListener("scroll", () => {
+    scrollToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  scrollToTopBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Responsive Property Card Grid
+  function updatePropertyGridLayout() {
+    const propertyListings = document.querySelector(".property-listings");
+    if (window.innerWidth <= 768) {
+      propertyListings.classList.add("column-layout");
+    } else {
+      propertyListings.classList.remove("column-layout");
     }
+  }
+  window.addEventListener("resize", updatePropertyGridLayout);
+  updatePropertyGridLayout(); // Initial check
 
-    if (modalClose) {
-        modalClose.addEventListener('click', () => {
-            if (modal) {
-                modal.style.display = 'none';
-            }
-        });
-    }
-
-    // Form validation
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = this.name.value.trim();
-            const email = this.email.value.trim();
-            const message = this.message.value.trim();
-
-            if (!name || !email || !message) {
-                alert('Please fill in all fields.');
-                return;
-            }
-
-            // Simulate form submission
-            alert('Form submitted successfully!');
-            this.reset();
-            if (modal) {
-                modal.style.display = 'none'; // Close modal after submission
-            }
-        });
-    }
+  // Real-time Search Filtering
+  const searchInput = document.querySelector(".search-bar");
+  const propertyCards = document.querySelectorAll(".property-card");
+  searchInput?.addEventListener("input", () => {
+    const filterText = searchInput.value.toLowerCase();
+    propertyCards.forEach((card) => {
+      const title = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = title.includes(filterText) ? "block" : "none";
+    });
+  });
 });
