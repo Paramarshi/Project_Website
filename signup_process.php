@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = $_POST['password'];  // Plain text password
 
     // Load the existing spreadsheet or create a new one
     $filePath = 'data.xlsx'; // Path to your Excel file
@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Find the next empty row
     $lastRow = $sheet->getHighestRow() + 1;
 
-    // Write data to the Excel file
+    // Write data to the Excel file (username, email, and password)
     $sheet->setCellValue('A' . $lastRow, $username);
     $sheet->setCellValue('B' . $lastRow, $email);
-    $sheet->setCellValue('C' . $lastRow, $password);
+    $sheet->setCellValue('C' . $lastRow, $password); // Storing plain text password
 
     // Save the spreadsheet
     $writer = new Xlsx($spreadsheet);
