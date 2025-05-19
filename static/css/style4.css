@@ -19,6 +19,21 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+.container p {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.container p a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+}
 
 /* Heading Style */
 .container h1 {
